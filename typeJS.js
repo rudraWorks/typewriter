@@ -108,7 +108,7 @@ var body=document.getElementsByTagName("body")[0];
   var tming,res;
   
 
-var type,i,len,arr,cnt=0;
+var type,i,len,arr,cnt=0,typeOfTest=1;
 
 var flag=0;
 inpt.disabled=true;
@@ -172,7 +172,13 @@ function fun()
 			inpt.disabled=true;inpt.value="";
 			screen.textContent="";
 			clearInterval(tming);	        
-			alert(Math.floor(cnt/(res/60))+" wpm");
+			if(typeOfTest==2){	
+				alert(Math.floor(cnt/(res/60))+" words per minute");
+			}
+			else{
+				alert(Math.floor(cnt/(res/60))+" characters per minute");
+				typeOfTest=1
+			}
 			a=0;
 			cnt=0;
 			}
@@ -202,7 +208,7 @@ function fun()
 	  topv.style.backgroundColor="transparent";
 	  	  midv.style.backgroundColor="transparent";
 		  botv.style.backgroundColor="transparent";
-
+		  typeOfTest=1
 	 fun();
  }
  
@@ -222,7 +228,7 @@ function fun()
 	  topv.style.backgroundColor="transparent";
 	  	  midv.style.backgroundColor="transparent";
 		  botv.style.backgroundColor="transparent";
-
+		  typeOfTest=1
 	 fun();
  }
  
@@ -242,7 +248,8 @@ function fun()
 	  topv.style.backgroundColor="transparent";
 	  	  midv.style.backgroundColor="transparent";
 		  botv.style.backgroundColor="transparent";
-
+	 typeOfTest=2;
+	 
 	 fun();
  }
  
@@ -262,7 +269,8 @@ function fun()
 	  topv.style.backgroundColor="yellow";
 	  midv.style.backgroundColor="transparent";
 	  botv.style.backgroundColor="transparent";
-	 fun();
+	  typeOfTest=1
+	  fun();
  }
  
  function mid()
@@ -281,7 +289,8 @@ function fun()
 	  topv.style.backgroundColor="transparent";
 	  botv.style.backgroundColor="transparent";
 	  midv.style.backgroundColor="yellow";
-	 fun();
+	  typeOfTest=1
+	  fun();
  }
  
  function bot()
@@ -301,7 +310,8 @@ function fun()
 	  topv.style.backgroundColor="transparent";
 	  midv.style.backgroundColor="transparent";
 	  botv.style.backgroundColor="yellow";
-	 fun();
+	  typeOfTest=1
+	  fun();
  }
  
  
@@ -313,7 +323,6 @@ function fun()
        else stime.textContent=res+" s";
    }
   
- 
  
  
  
