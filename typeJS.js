@@ -91,7 +91,7 @@ var stime=document.getElementById("time");
 
 screenLength=window.innerHeight;
 screenBreadth=window.innerWidth;
-//alert(screenLength+"  "+screenBreadth);
+alert(screenLength+"  "+screenBreadth);
 if (screenLength<600 || screenBreadth<1000)
 {
 	alert("Please consider using desktop or laptop for better typing experience!")
